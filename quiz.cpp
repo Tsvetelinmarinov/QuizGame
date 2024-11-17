@@ -17,7 +17,7 @@ private:
     /**
     * All the questions of the quiz
     */
-    const char* quest[5] = {
+    char* quest[5] = {
       " Who is Andre Moroa?",
       " What is the light?",
       " Who is Stendal?",
@@ -30,7 +30,7 @@ private:
     * All the answers
     * every question has 3 options and 1 correct answer
     */
-    const char* ans[5][3] = {
+    char* ans[5][3] = {
       {"A. French writer","B. English compositor","C. German imperator"},
       {"A. piece","B. wave","C. act like both"},
       {"A. English pianoman","B. Italian moviemaker","C. French writer"},
@@ -203,7 +203,7 @@ void quiz::show_assesment() {
     }
 
     std::cout << "================================================================\n\n\n\n";
-
+    
 }
 
 
