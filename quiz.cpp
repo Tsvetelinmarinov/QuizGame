@@ -1,3 +1,4 @@
+
 /**
 * Simple quiz
 */
@@ -17,12 +18,13 @@ private:
     /**
     * All the questions of the quiz
     */
-    char* quest[5] = {
+    char* quest[6] = {
       " Who is Andre Moroa?",
       " What is the light?",
       " Who is Stendal?",
       " What is the sound?",
-      " What is the Otonogenesis?"
+      " What is the Otonogenesis?",
+      " Who writes 'The dead of Vergilii'?"
     };
 
 
@@ -30,19 +32,20 @@ private:
     * All the answers
     * every question has 3 options and 1 correct answer
     */
-    char* ans[5][3] = {
+    char* ans[6][3] = {
       {"A. French writer","B. English compositor","C. German imperator"},
       {"A. piece","B. wave","C. act like both"},
       {"A. English pianoman","B. Italian moviemaker","C. French writer"},
       {"A. wave","B. piece","C. unknown"},
-      {"A. Repeating of the Filogenesis","B. Borning procces","C. Reborning"}
+      {"A. Repeating of the Filogenesis","B. Borning procces","C. Reborning"},
+      {"A. Herman Broch","B. David Mayer","C. Mark Antony"}
     };
 
 
     /**
     * Correct answers
     */
-    char keys[5] = { 'A','C','C','A','A' };
+    char keys[6] = { 'A','C','C','A','A','A' };
 
 
 
@@ -58,10 +61,11 @@ private:
     /**
     * Assesment
     * 0 scores -- 2
-    * 1 scores -- 3
-    * 2 scores -- 4
-    * 3 scores -- 5
-    * 4 - 5 scores -- 6
+    * 1 scores -- 2
+    * 2 scroes -- 3
+    * 3 scores -- 4
+    * 4 - 5 scores -- 5
+    * 6 scores -- 6
     */
     int assesment = 0;
 
@@ -167,9 +171,12 @@ void quiz::show_assesment() {
         assesment = 4;
         break;
     case 4:
-        assesment = 6;
+        assesment = 5;
         break;
     case 5:
+        assesment = 5;
+        break;
+    case 6:
         assesment = 6;
         break;
     }
@@ -203,7 +210,7 @@ void quiz::show_assesment() {
     }
 
     std::cout << "================================================================\n\n\n\n";
-    
+
 }
 
 
