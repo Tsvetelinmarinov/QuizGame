@@ -18,13 +18,14 @@ private:
     /**
     * All the questions of the quiz
     */
-    char* quest[6] = {
+    char* quest[7] = {
       " Who is Andre Moroa?",
       " What is the light?",
       " Who is Stendal?",
       " What is the sound?",
       " What is the Otonogenesis?",
-      " Who writes 'The dead of Vergilii'?"
+      " Who writes 'The dead of Vergilii'?",
+      " Choose the right formula of the ammonya"
     };
 
 
@@ -32,27 +33,28 @@ private:
     * All the answers
     * every question has 3 options and 1 correct answer
     */
-    char* ans[6][3] = {
+    char* ans[7][3] = {
       {"A. French writer","B. English compositor","C. German imperator"},
       {"A. piece","B. wave","C. act like both"},
       {"A. English pianoman","B. Italian moviemaker","C. French writer"},
       {"A. wave","B. piece","C. unknown"},
       {"A. Repeating of the Filogenesis","B. Borning procces","C. Reborning"},
-      {"A. Herman Broch","B. David Mayer","C. Mark Antony"}
+      {"A. Herman Broch","B. David Mayer","C. Mark Antony"},
+      {"A. H2O","B. NH3","C. OH2"}
     };
 
 
     /**
     * Correct answers
     */
-    char keys[6] = { 'A','C','C','A','A','A' };
+    char keys[7] = { 'A','C','C','A','A','A','B' };
 
 
 
     /**
     * Scores
     * every correct answer brings 1 score
-    * max scores 5
+    * max scores 7
     */
     int scores = 0;
 
@@ -63,9 +65,11 @@ private:
     * 0 scores -- 2
     * 1 scores -- 2
     * 2 scroes -- 3
-    * 3 scores -- 4
-    * 4 - 5 scores -- 5
-    * 6 scores -- 6
+    * 3 scores -- 3
+    * 4 scores -- 4
+    * 5 scores -- 4
+    * 6 scores -- 5
+    * 7 scores -- 6
     */
     int assesment = 0;
 
@@ -118,11 +122,11 @@ void quiz::show_quest_and_ans() {
 
     std::cout << " Have a nice play!\n\n\n\n";
     std::cout << "=========================================================\n";
-    std::cout << " The quiz has 5 questions\n";
-    std::cout << " Every question has 3 options and 1 right option!\n Every rigth option brings 1 ponit\n";
-    std::cout << " Type the letter of the correct answer\n\n\n";
-    std::cout << " Assesment scale\n";
-    std::cout << "   0 points - 2\n   1 point - 3\n   2 points - 4\n   3 points - 5\n   4 or 5 points - 6\n";
+    std::cout << " The quiz has 7 questions\n";
+    std::cout << " Every question has 3 options and 1 rigth option!\n Every rigth option brings 1 point.\n";
+    std::cout << " Type the letter of the correct answer.\n\n\n";
+    std::cout << " Assessment scale\n";
+    std::cout << "   0 points - 2\n   1 point - 2\n   2 points - 3\n   3 points - 3\n   4 points - 4\n   5 points - 4\n   6 points - 5\n   7 points - 6\n";
     std::cout << "=========================================================\n\n\n\n";
 
     for (int i = 0; i < quest_quantity; i++) {
@@ -135,7 +139,7 @@ void quiz::show_quest_and_ans() {
         }
         std::cout << std::endl;
 
-        std::cout << "Type the answer > ";
+        std::cout << "Type the letter of the answer > ";
         std::cin >> choise;
         choise = toupper(choise);
 
@@ -168,15 +172,18 @@ void quiz::show_assesment() {
         assesment = 3;
         break;
     case 3:
-        assesment = 4;
+        assesment = 3;
         break;
     case 4:
-        assesment = 5;
+        assesment = 3;
         break;
     case 5:
-        assesment = 5;
+        assesment = 3;
         break;
     case 6:
+        assesment = 5;
+        break;
+    case 7:
         assesment = 6;
         break;
     }
@@ -200,11 +207,11 @@ void quiz::show_assesment() {
         std::cout << msg << std::endl;
         break;
     case 5:
-        msg = " Very good, but not exellect! Thing about that!";
+        msg = " Very good, but not excellent! Thing about that!";
         std::cout << msg << std::endl;
         break;
     case 6:
-        msg = " Exellect! I know you know!";
+        msg = " Excellent! I know you know!";
         std::cout << msg << std::endl;
         break;
     }
